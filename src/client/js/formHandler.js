@@ -14,29 +14,6 @@ function handleSubmit(event) {
   }
 
   function handleAnalysisResponse({agreement, confidence, irony, score_tag, subjectivity}) {
-    const polarityChecker = (score) => {
-      let display
-      switch (score){
-        case 'P+':
-          display = 'strong positive'
-          break;
-        case 'P':
-          display = 'positive'
-          break;
-        case 'NEW':
-          display = 'neutral'
-          break;
-        case 'N':
-          display = 'negative'
-          break;
-        case 'N+':
-          display = 'strong negative'
-          break;
-        case 'NONE':
-          display = 'no sentiment'
-      }
-      return display.toUpperCase()
-    }
     document.getElementById("polarity").innerHTML = 'Polarity: ' + polarityChecker(score_tag)
     document.getElementById("agreement").innerHTML = `Agreement: ${agreement}`
     document.getElementById("subjectivity").innerHTML = `Subjectivity: ${subjectivity}`
@@ -65,4 +42,29 @@ const postData = async (url = "", data = {}) => {
   }
 }
 
+const polarityChecker = (score) => {
+  let display
+  switch (score){
+    case 'P+':
+      display = 'strong positive'
+      break;
+    case 'P':
+      display = 'positive'
+      break;
+    case 'NEW':
+      display = 'neutral'
+      break;
+    case 'N':
+      display = 'negative'
+      break;
+    case 'N+':
+      display = 'strong negative'
+      break;
+    case 'NONE':
+      display = 'no sentiment'
+  }
+  return display.toUpperCase()
+}
+
 export { handleSubmit }
+export { polarityChecker}
