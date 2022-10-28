@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 2;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem;
+  font: 300 1rem "Roboto", sans-serif;
+  background: rgba(204, 236, 171, 0.7);
+}
+
+p {
+  margin: 1rem;
+}
+
+section {
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+a:link, a:visited {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(53, 187, 56);
+}
+
+/*# sourceMappingURL=base.css.map */

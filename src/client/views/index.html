@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Evaluate a News</title>
+    </head>
+
+    <body>
+
+        <header>
+          <h1>
+            Try the news analyzer!
+          </h1>
+        </header>
+
+        <main>
+            <section>
+               <p>Please, enter the url of the news you want to analyze:</p>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                  <input id="url" type="text" name="input" value="" placeholder="Enter URL here">
+                  <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)">
+                </form>
+            </section>
+
+            <section>
+                <strong>Analysis Results:</strong>
+                <div id="polarity"></div>
+                <div id="agreement"></div>
+                <div id="subjectivity"></div>
+                <div id="confidence"></div>
+                <div id="irony"></div>
+            </section>
+        </main>
+
+        <footer>
+            <nav class="footerNavigation">
+                <ul>
+                  <li><a href="#">Info</a></li>
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+        <script>
+          // Check that service workers are supported
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+            });
+          }
+        </script>
+
+    </body>
+</html>
